@@ -17,7 +17,7 @@
             "type": "cppdbg",
             "request": "launch",
             "name": "MacOs Debug",
-            "program": "${workspaceFolder}\\Darwin_build\\appName.Mach-O",
+            "program": "${workspaceFolder}\\Darwin_build\\${config:projectName}.Mach-O",
             "cwd": "${workspaceFolder}",
             "stopAtEntry": true,
             "MIMode": "lldb"
@@ -26,7 +26,7 @@
             "type": "cppdbg",
             "request": "launch",
             "name": "Linux Debug",
-            "program": "${workspaceFolder}\\Linux_build\\appName.elf",
+            "program": "${workspaceFolder}\\Linux_build\\${config:projectName}.elf",
             "cwd": "${workspaceFolder}",
             "stopAtEntry": true,
             "MIMode": "gdb",
@@ -44,7 +44,7 @@
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "name": "ESP Debug",
-            "program": "${workspaceFolder}\\build\\appName.elf",
+            "program": "${workspaceFolder}\\build\\${config:projectName}.elf",
             "targetArchitecture": "arm",
             "MIMode": "gdb",
             "miDebuggerPath": "xtensa-esp32s3-elf-gdb",
@@ -54,7 +54,7 @@
                     "ignoreFailures": false
                 },
                 {
-                    "text": "-file-exec-and-symbols appName.elf",
+                    "text": "-file-exec-and-symbols ${config:projectName}.elf",
                     "ignoreFailures": false
                 },
                 {
@@ -108,7 +108,7 @@
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "name": "CC3220SF Launchpad Debug",
-            "program": "${workspaceFolder}\\Cc32xx_build/appName.elf",
+            "program": "${workspaceFolder}\\Cc32xx_build/${config:projectName}.elf",
             "targetArchitecture": "arm",
             "MIMode": "gdb",
             "miDebuggerPath": "${userHome}/ti/ccs1281/ccs/tools/compiler/gcc-arm-none-eabi-9-2019-q4-major/bin/arm-none-eabi-gdb",
@@ -118,7 +118,7 @@
                     "ignoreFailures": false
                 },
                 {
-                    "text": "-file-exec-and-symbols appName.elf",
+                    "text": "-file-exec-and-symbols ${config:projectName}.elf",
                     "ignoreFailures": false
                 },
                 {
@@ -169,7 +169,7 @@
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "name": "Tm4c123 Launchpad Debug",
-            "program": "${workspaceFolder}\\Tm4c123_build/appName.elf",
+            "program": "${workspaceFolder}\\Tm4c123_build/${config:projectName}.elf",
             "targetArchitecture": "arm",
             "MIMode": "gdb",
             "miDebuggerPath": "${userHome}/ti/ccs1281/ccs/tools/compiler/gcc-arm-none-eabi-9-2019-q4-major/bin/arm-none-eabi-gdb",
@@ -179,7 +179,7 @@
                     "ignoreFailures": false
                 },
                 {
-                    "text": "-file-exec-and-symbols appName.elf",
+                    "text": "-file-exec-and-symbols ${config:projectName}.elf",
                     "ignoreFailures": false
                 },
                 {
