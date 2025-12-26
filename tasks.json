@@ -13,11 +13,11 @@
         "command": "./uniflash_project_generator",
         "args": [
             "--name",
-            "appName",
+            "${config:projectName}",
             "--device",
             "CC3220SF",
             "--mcu_bin",
-            "${workspaceFolder}/Cc32xx_build/appName.bin",
+            "${workspaceFolder}/Cc32xx_build/${config:projectName}.bin",
             "--flash",
             "--use_from_uniflash",
             "--debug"
@@ -44,7 +44,18 @@
           "-E",
           "-S",
           "0x00000000",
-          "${workspaceFolder}/Tm4c123_build/appName.bin"
+          "${workspaceFolder}/Tm4c123_build/${config:projectName}.bin"
+        ]
+      },
+      {
+        "label": "Tm4c129 flash",
+        "type": "shell",
+        "command": "lm4flash",
+        "args": [
+          "-E",
+          "-S",
+          "0x00000000",
+          "${workspaceFolder}/Tm4c129_build/${config:projectName}.bin"
         ]
       }
     ]
