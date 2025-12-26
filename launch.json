@@ -220,6 +220,55 @@
             "debugServerArgs": "-f board/ti_ek-tm4c123gxl.cfg",
             "filterStderr": true,
             "filterStdout": true
+        },
+        {
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "name": "Tm4c129 Launchpad Debug",
+            "program": "${workspaceFolder}\\Tm4c129_build/${config:projectName}.elf",
+            "targetArchitecture": "arm",
+            "MIMode": "gdb",
+            "miDebuggerPath": "${userHome}/ti/gcc-arm-none-eabi_9_3_1/bin/arm-none-eabi-gdb",
+            "setupCommands": [
+                {
+                    "text": "-environment-cd ${workspaceFolder}/Tm4c129_build",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "-file-exec-and-symbols ${config:projectName}.elf",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "-break-insert main",
+                    "ignoreFailures": false
+                }
+            ],
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target extended-remote localhost:3333",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "monitor reset",
+                    "ignoreFailures": false
+                },
+                {
+                    "text": "monitor halt",
+                    "ignoreFailure": false
+                }
+            ],
+            "showDisplayString": false,
+            "miDebuggerServerAddress": "localhost:3333",
+            "launchCompleteCommand": "None",
+            "debugServerPath": "openocd",
+            "debugServerArgs": "-f board/ti_ek-tm4c1294xl.cfg",
+            "filterStderr": true,
+            "filterStdout": true
         }
     ]
 }
